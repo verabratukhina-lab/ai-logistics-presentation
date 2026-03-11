@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ИИ в логистике 2025-2030 | Исследование</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f7fa;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 120px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .hero .subtitle {
+            font-size: 1.5em;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .hero .meta {
+            font-size: 1.1em;
+            opacity: 0.9;
+            background: rgba(255,255,255,0.15);
+            display: inline-block;
+            padding: 10px 30px;
+            border-radius: 30px;
+            backdrop-filter: blur(10px);
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: 2.5em;
+            margin-bottom: 50px;
+            text-align: center;
+            color: #2d3748;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 20px auto 0;
+            border-radius: 2px;
+        }
+
+        /* Technologies Grid */
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .tech-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 4px solid #667eea;
+        }
+
+        .tech-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .tech-card h3 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            color: #667eea;
+        }
+
+        .tech-card .metric {
+            font-size: 2em;
+            font-weight: bold;
+            color: #764ba2;
+            margin: 15px 0;
+        }
+
+        .tech-card ul {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .tech-card ul li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .tech-card ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #48bb78;
+            font-weight: bold;
+        }
+
+        /* Cases Section */
+        .cases {
+            background: white;
+        }
+
+        .chart-container {
+            background: #f7fafc;
+            padding: 40px;
+            border-radius: 15px;
+            margin: 40px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .bar-chart {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-around;
+            height: 400px;
+            padding: 20px;
+            gap: 30px;
+        }
+
+        .bar-wrapper {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100%;
+            justify-content: flex-end;
+        }
+
+        .bar {
+            width: 100%;
+            max-width: 150px;
+            background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+            border-radius: 10px 10px 0 0;
+            transition: all 0.3s;
+            position: relative;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            padding-top: 10px;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2em;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .bar:hover {
+            transform: scaleY(1.05);
+        }
+
+        .bar-label {
+            margin-top: 15px;
+            font-weight: 600;
+            color: #2d3748;
+            text-align: center;
+            font-size: 1.1em;
+        }
+
+        .bar-value {
+            margin-top: 5px;
+            color: #718096;
+            font-size: 0.95em;
+        }
+
+        .cases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .case-card {
+            background: #f7fafc;
+            padding: 30px;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+
+        .case-card h3 {
+            color: #2d3748;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+
+        .case-metric {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .case-metric .label {
+            color: #718096;
+        }
+
+        .case-metric .value {
+            font-weight: bold;
+            color: #667eea;
+            font-size: 1.1em;
+        }
+
+        /* Forecast Section */
+        .forecast {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .stat-number {
+            font-size: 3em;
+            font-weight: bold;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            color: #718096;
+            font-size: 1.1em;
+        }
+
+        .stat-change {
+            margin-top: 10px;
+            font-size: 0.9em;
+            color: #48bb78;
+            font-weight: 600;
+        }
+
+        .trends {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            margin-top: 40px;
+        }
+
+        .trend-item {
+            padding: 20px;
+            border-bottom: 1px solid #e2e8f0;
+            display: flex;
+            align-items: start;
+            gap: 20px;
+        }
+
+        .trend-item:last-child {
+            border-bottom: none;
+        }
+
+        .trend-number {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .trend-content h4 {
+            color: #2d3748;
+            margin-bottom: 5px;
+        }
+
+        .trend-content p {
+            color: #718096;
+        }
+
+        /* Risks Section */
+        .risks-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .risk-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            border-left: 4px solid #f56565;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
+
+        .risk-card h4 {
+            color: #e53e3e;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .risk-percent {
+            background: #fed7d7;
+            color: #c53030;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        /* Recommendations */
+        .recommendations {
+            background: white;
+        }
+
+        .steps {
+            counter-reset: step;
+            list-style: none;
+        }
+
+        .step {
+            padding: 30px;
+            margin-bottom: 20px;
+            background: #f7fafc;
+            border-radius: 10px;
+            position: relative;
+            padding-left: 80px;
+            border-left: 4px solid #667eea;
+        }
+
+        .step::before {
+            counter-increment: step;
+            content: counter(step);
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.3em;
+        }
+
+        .step h4 {
+            color: #2d3748;
+            margin-bottom: 8px;
+            font-size: 1.3em;
+        }
+
+        .step p {
+            color: #718096;
+        }
+
+        .priority {
+            display: inline-block;
+            padding: 3px 12px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            font-weight: 600;
+            margin-top: 8px;
+        }
+
+        .priority.high {
+            background: #c6f6d5;
+            color: #22543d;
+        }
+
+        .priority.medium {
+            background: #feebc8;
+            color: #744210;
+        }
+
+        /* CTA */
+        .cta {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 40px;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .cta h3 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .cta p {
+            font-size: 1.2em;
+            opacity: 0.95;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Footer */
+        footer {
+            background: #2d3748;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 80px;
+        }
+
+        footer p {
+            opacity: 0.8;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2em;
+            }
+
+            .hero .subtitle {
+                font-size: 1.2em;
+            }
+
+            h2 {
+                font-size: 1.8em;
+            }
+
+            .bar-chart {
+                flex-direction: column;
+                height: auto;
+                gap: 20px;
+            }
+
+            .bar-wrapper {
+                width: 100%;
+            }
+
+            .bar {
+                height: 60px !important;
+                width: 100%;
+                border-radius: 0 10px 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>📊 ИИ в логистике</h1>
+            <p class="subtitle">Глубокое исследование применения искусственного интеллекта</p>
+            <p class="meta">📅 Период анализа: 2025-2030 | 📆 Дата отчёта: 11 марта 2026</p>
+        </div>
+    </section>
+
+    <!-- Technologies Section -->
+    <section id="technologies">
+        <h2>🚀 Ключевые технологии</h2>
+        <div class="tech-grid">
+            <div class="tech-card">
+                <h3>🤖 Машинное обучение</h3>
+                <p>Основа большинства ИИ-решений в логистике. Системы обучаются на исторических данных и улучшают прогнозы.</p>
+                <div class="metric">20-50%</div>
+                <p>Снижение ошибок прогнозирования</p>
+                <ul>
+                    <li>Прогнозирование спроса (LSTM)</li>
+                    <li>Оптимизация маршрутов (RL)</li>
+                    <li>Предиктивное обслуживание</li>
+                    <li>Динамическое ценообразование</li>
+                </ul>
+            </div>
+
+            <div class="tech-card">
+                <h3>👁️ Компьютерное зрение</h3>
+                <p>Трансформирует складские операции и контроль качества с помощью нейронных сетей.</p>
+                <div class="metric">99%</div>
+                <p>Точность распознавания</p>
+                <ul>
+                    <li>Распознавание повреждений</li>
+                    <li>Автоматическая сортировка</li>
+                    <li>Инвентаризация дронами</li>
+                    <li>Контроль упаковки</li>
+                </ul>
+            </div>
+
+            <div class="tech-card">
+                <h3>💬 NLP</h3>
+                <p>Автоматизирует работу с документами и улучшает коммуникацию в цепочке поставок.</p>
+                <div class="metric">85%</div>
+                <p>Автоматизация документов</p>
+                <ul>
+                    <li>Обработка документов</li>
+                    <li>Голосовые команды на складе</li>
+                    <li>Чат-боты для клиентов</li>
+                    <li>Анализ контрактов</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cases Section with Chart -->
+    <section id="cases" class="cases">
+        <h2>💼 Кейсы внедрения</h2>
+        
+        <div class="chart-container">
+            <h3 style="text-align: center; margin-bottom: 30px; color: #2d3748;">Годовая экономия компаний от внедрения ИИ</h3>
+            <div class="bar-chart">
+                <div class="bar-wrapper">
+                    <div class="bar" style="height: 250px;">$300-400M</div>
+                    <div class="bar-label">UPS</div>
+                    <div class="bar-value">ORION: 100 млн миль/год</div>
+                </div>
+                <div class="bar-wrapper">
+                    <div class="bar" style="height: 400px;">$1.6B</div>
+                    <div class="bar-label">Amazon</div>
+                    <div class="bar-value">25+ лет оптимизации</div>
+                </div>
+                <div class="bar-wrapper">
+                    <div class="bar" style="height: 150px;">10%</div>
+                    <div class="bar-label">DHL</div>
+                    <div class="bar-value">50+ стран</div>
+                </div>
+                <div class="bar-wrapper">
+                    <div class="bar" style="height: 180px;">$200M+</div>
+                    <div class="bar-label">FedEx</div>
+                    <div class="bar-value">Control Tower AI</div>
+                </div>
+                <div class="bar-wrapper">
+                    <div class="bar" style="height: 220px;">$1B+</div>
+                    <div class="bar-label">Walmart</div>
+                    <div class="bar-value">Интегрированная оптимизация</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cases-grid">
+            <div class="case-card">
+                <h3>📦 UPS: ORION</h3>
+                <div class="case-metric">
+                    <span class="label">Экономия миль</span>
+                    <span class="value">100 млн/год</span>
+                </div>
+                <div class="case-metric">
+                    <span class="label">Топливо</span>
+                    <span class="value">10 млн галлонов</span>
+                </div>
+                <div class="case-metric">
+                    <span class="label">CO₂</span>
+                    <span class="value">100,000 тонн</span>
+                </div>
+                <p style="margin-top: 15px; color: #718096; font-size: 0.95em;">
+                    <strong>Ключевая инновация:</strong> Предпочтение правых поворотов снижает время простоя и риск аварий
+                </p>
+            </div>
+
+            <div class="case-card">
+                <h3>🚚 Amazon: Цепочка поставок</h3>
+                <div class="case-metric">
+                    <span class="label">Обработка</span>
+                    <span class="value">+75%</span>
+                </div>
+                <div class="case-metric">
+                    <span class="label">CO₂</span>
+                    <span class="value">-1 млн тонн</span>
+                </div>
+                <div class="case-metric">
+                    <span class="label">Упаковка</span>
+                    <span class="value">2 млн тонн</span>
+                </div>
+                <p style="margin-top: 15px; color: #718096; font-size: 0.95em;">
+                    Packaging Decision Engine оптимизирует миллионы упаковок ежедневно
+                </p>
+            </div>
+
+            <div class="case-card">
+                <h3>🌍 DHL: Глобальная оптимизация</h3>
+                <div class="case-metric">
+                    <span class="label">Затраты</span>
+                    <span class="value">-10%</span>
+                </div>
+                <div class="case-metric">
+                    <span class="label">Доставка вовремя</span>
+                    <span class="value">+15%</span>
+                </div>
+                <div class="case-metric">
+                    <span class="label">Таможня</span>
+                    <span class="value">+25%</span>
+                </div>
+                <p style="margin-top: 15px; color: #718096; font-size: 0.95em;">
+                    DHLBots сортируют 1,000+ посылок/час с точностью 99%
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Forecast Section -->
+    <section id="forecast" class="forecast">
+        <h2>📈 Прогнозы до 2030</h2>
+        
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">$132.6B</div>
+                <div class="stat-label">Рынок автоматизации логистики</div>
+                <div class="stat-change">↑ с $82.7 млрд (2025)</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">75%</div>
+                <div class="stat-label">Роботизированных доставок</div>
+                <div class="stat-change">К 2030 году</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">85%+</div>
+                <div class="stat-label">Автоматизация складов</div>
+                <div class="stat-change">↑ с 57% (2025)</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">99%+</div>
+                <div class="stat-label">Точность прогнозирования</div>
+                <div class="stat-change">↑ с 98% (2025)</div>
+            </div>
+        </div>
+
+        <div class="trends">
+            <h3 style="margin-bottom: 30px; color: #2d3748;">🔮 Ключевые тренды 2026-2030</h3>
+            
+            <div class="trend-item">
+                <div class="trend-number">1</div>
+                <div class="trend-content">
+                    <h4>Автономная логистика</h4>
+                    <p>Amazon, UPS, FedEx прогнозируются как 100% роботизированные к 2030. Humanoid robots для складских операций.</p>
+                </div>
+            </div>
+
+            <div class="trend-item">
+                <div class="trend-number">2</div>
+                <div class="trend-content">
+                    <h4>Генеративный ИИ</h4>
+                    <p>Интеграция LLM для принятия решений в реальном времени. Контекстно-зависимые ИИ-ассистенты с памятью состояния.</p>
+                </div>
+            </div>
+
+            <div class="trend-item">
+                <div class="trend-number">3</div>
+                <div class="trend-content">
+                    <h4>Цифровые двойники</h4>
+                    <p>UPS создаёт динамические цифровые копии всей сети. Оптимизация за один день вместо месяцев.</p>
+                </div>
+            </div>
+
+            <div class="trend-item">
+                <div class="trend-number">4</div>
+                <div class="trend-content">
+                    <h4>Устойчивое развитие</h4>
+                    <p>ИИ поможет сократить глобальные выбросы парниковых газов на 4% к 2030. Экономия $5.2 трлн для мировой экономики.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Risks Section -->
+    <section id="risks">
+        <h2>⚠️ Риски и ограничения</h2>
+        <div class="risks-grid">
+            <div class="risk-card">
+                <h4>📊 Качество данных</h4>
+                <p>Устаревшие данные приводят к неверным прогнозам спроса и ненадёжному отслеживанию отправок.</p>
+                <span class="risk-percent">39% компаний</span>
+            </div>
+
+            <div class="risk-card">
+                <h4>👥 Нехватка талантов</h4>
+                <p>Трудности с поиском специализированного персонала для внедрения и поддержки ИИ-систем.</p>
+                <span class="risk-percent">44% компаний</span>
+            </div>
+
+            <div class="risk-card">
+                <h4>💰 Бюджетные ограничения</h4>
+                <p>Недостаток средств для масштабирования пилотных проектов до уровня предприятия.</p>
+                <span class="risk-percent">43% компаний</span>
+            </div>
+
+            <div class="risk-card">
+                <h4>🔒 Безопасность</h4>
+                <p>Риск раскрытия торговых секретов и персональных данных клиентов через ИИ-системы.</p>
+            </div>
+
+            <div class="risk-card">
+                <h4>⚖️ Регуляторная неопределённость</h4>
+                <p>Несоблюдение развивающихся законов об управлении ИИ (EU AI Act и др.).</p>
+            </div>
+
+            <div class="risk-card">
+                <h4>🔧 Сложность интеграции</h4>
+                <p>Задержки внедрения из-за несовместимости API и фрагментации систем.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recommendations Section -->
+    <section id="recommendations" class="recommendations">
+        <h2>✅ Рекомендации по внедрению</h2>
+        
+        <ol class="steps">
+            <li class="step">
+                <h4>Аудит качества данных</h4>
+                <p>Создание data governance и оценка текущей инфраструктуры данных</p>
+                <span class="priority high">Высокий приоритет</span>
+            </li>
+
+            <li class="step">
+                <h4>Пилотные проекты</h4>
+                <p>Запуск проектов с измеримым ROI: маршрутизация, прогнозирование спроса</p>
+                <span class="priority high">Высокий приоритет</span>
+            </li>
+
+            <li class="step">
+                <h4>Обучение персонала</h4>
+                <p>Инвестиции в обучение и change management для затронутых команд</p>
+                <span class="priority high">Высокий приоритет</span>
+            </li>
+
+            <li class="step">
+                <h4>API-first интеграция</h4>
+                <p>Выбор платформ с современным middleware и стандартизированными конечными точками</p>
+                <span class="priority medium">Средний приоритет</span>
+            </li>
+
+            <li class="step">
+                <h4>Объяснимый ИИ (XAI)</h4>
+                <p>Внедрение фреймворков для объяснимости решений и логирования моделей</p>
+                <span class="priority medium">Средний приоритет</span>
+            </li>
+
+            <li class="step">
+                <h4>Постепенное масштабирование</h4>
+                <p>Расширение с чёткими вехами и реалистичными сроками</p>
+                <span class="priority medium">Средний приоритет</span>
+            </li>
+        </ol>
+
+        <div class="cta">
+            <h3>🎯 Стратегический прогноз</h3>
+            <p>К 2030 году ИИ станет обязательным компонентом для конкурентоспособности. Компании, которые не начнут внедрение в ближайшие 2-3 года, рискуют отстать критически, так как экономия 8-15% на операционных издержках при маржинальности 3-7% означает <strong>удвоение прибыльности</strong>.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Исследовательский отчёт по применению ИИ в логистике</p>
+        <p style="margin-top: 10px; font-size: 0.9em;">Подготовлено на основе актуальных данных на март 2026 года</p>
+    </footer>
+
+</body>
+</html>
